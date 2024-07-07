@@ -4,12 +4,15 @@ import { connecttodb } from './src/config/db.js';
 import { userRoute } from './src/routes/userRoute.js';
 import { todoRoute } from './src/routes/todoRoute.js';
 import { auth } from './src/controlles/auth.js';
+import cors from 'cors'
 
 config();
 
 const app=express();
 
 app.use(express.json());
+
+app.use(cors())
 
 app.use("",userRoute);
 
