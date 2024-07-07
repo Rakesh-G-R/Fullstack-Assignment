@@ -13,7 +13,7 @@ export const getUsers=async(req,res)=>{
 
 export const userRegister=async(req,res)=>{
     const {userName,email,password,role}=req.body;
-    existUser=await User.findOne({email});
+   const  existUser=await User.findOne({email});
     if(existUser){
          return res.status(400).json({message:"user exist try to login"});
     }
